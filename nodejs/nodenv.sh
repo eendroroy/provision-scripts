@@ -1,4 +1,5 @@
 #/usr/bin/env bash
+SCRIPT_ROOT=$(dirname $(readlink -f $0))
 NODENV_PATH="/usr/local/nodenv"
 NODENV_PATH_TMP="/tmp/nodenv"
 if [ -d "${NODEND_PATH}" ]; then
@@ -17,8 +18,8 @@ else
   git clone https://github.com/nodenv/nodenv-default-packages.git > /dev/null
   popd
   touch "${NODENV_PATH_TMP}/default-packages"
-	sudo mv ${NODENV_PATH_TMP} ${NODENV_PATH}
-	sudo chown ${USER}:${USER} ${NODENV_PATH} -R
+	sudo mv ${NODENV_PATH_TMP} ${NODENV_PATH} > /dev/null
+	sudo chown ${USER}:${USER} ${NODENV_PATH} -R > /dev/null
 	echo " ==> updating path"
-	sudo cp "${0:A:h}/nodenv.template.sh" /etc/profile.d/nodenv.sh
+	sudo cp "${SCRIPT_ROOT}/nodenv.template.sh" /etc/profile.d/nodenv.sh > /dev/null
 fi
