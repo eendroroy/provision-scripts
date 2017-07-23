@@ -10,7 +10,7 @@ for rel in $releases; do
     echo "==> ${rel}" | tr -d "/"
     latest=`echo "${rel}" | tr -d " /"`
 done
-echo "Installing latest release => ${latest} <="
+echo " ==> installing latest release => ${latest} <="
 
 sudo apt-get install -y libfontconfig libxrender1
 
