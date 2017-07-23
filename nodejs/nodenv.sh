@@ -20,5 +20,5 @@ else
 	sudo mv ${NODENV_PATH_TMP} ${NODENV_PATH}
 	sudo chown ${USER}:${USER} ${NODENV_PATH} -R
 	echo " ==> updating path"
-	sudo cp "${0:A:h}/exenv.template.sh" /etc/profile.d/nodenv.sh
+	sudo cp "${0:A:h}/nodenv.template.sh" /etc/profile.d/nodenv.sh
 fi
