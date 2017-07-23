@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-GOENV_PATH="/usr/local/exenv"
-GOENV_PATH_TMP="/tmp/exenv"
+GOENV_PATH="/usr/local/goenv"
+GOENV_PATH_TMP="/tmp/goenv"
 if [ -d ${GOENV_PATH} ]; then
   echo '########## goenv already installed, skipping.'
 else
@@ -9,5 +9,5 @@ else
 	sudo mv ${GOENV_PATH_TMP} ${GOENV_PATH}
 	sudo chown ${USER}:${USER} ${GOENV_PATH} -R
 	echo " ==> updating path"
-	sudo cp "${0:A:h}/goenv.template.sh" /etc/profile.d/exenv.sh
+	sudo cp "${0:A:h}/goenv.template.sh" /etc/profile.d/goenv.sh
 fi
